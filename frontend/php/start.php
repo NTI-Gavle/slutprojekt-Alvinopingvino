@@ -12,25 +12,24 @@
 </head>
 
 <body>
-
-    <?php
-    include('reusable/header.php');
-    ?>
-
-    <div class="page">
-        <div style="width: 30%; height: 100px;">
-            <?php
+    <div class="d-flex flex-column vh-100">
+        <?php
+        include('reusable/header.php');
+        ?>
+        <div class="page flex-grow-1">
+            <div class="bg-body-tertiary" style="width: 20%;">
+                <?php
                 include('reusable/menu.php')
-            ?>
-        </div>
-        <div style="width: 40%; height: 100px;">
+                ?>
+            </div>
+            <div style="width: 60%;" class="feed">
+            </div>
+            <div style="width: 20%;">
 
+            </div>
         </div>
-        <div style="width: 30%; height: 100px;">
 
-        </div>
     </div>
-
 </body>
 
 </html>
