@@ -8,6 +8,27 @@
     flex-direction: row;
 }
 .feed{
+    height: 100%; 
+    margin-left:auto; 
+    margin-right: auto;
+
     overflow-y: scroll;
     overflow: hidden;
+}
+
+.username{
+    font-weight: bold;
+    text-decoration: underline;
+}
+.pfp{
+    width: 60px;
+    height: 60px;
+}
+
+.post{
+    margin-top: 5%;
+}
+.post_header{
+    display: flex;
+    flex-direction: row;
 }

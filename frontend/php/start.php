@@ -17,19 +17,22 @@
         include('reusable/header.php');
         ?>
         <div class="page flex-grow-1">
-            <div class="bg-body-tertiary" style="width: 20%;">
+            <div class="bg-body-tertiary" style="width: 5%; min-width: 57.33px; border-right: 1px solid lightgray;">
                 <?php
                 include('reusable/menu.php')
                 ?>
             </div>
-            <div style="width: 60%;" class="feed">
+            <div style="width: 90%;">
+                <div class="feed" style="width: 60%;">
+                    <?php
+                        include('../../backend/feed.php');
+                    ?>
+                </div>
             </div>
-            <div style="width: 20%;">
-
+            <div style="width: 5%; min-width:57.33px;">
             </div>
         </div>
 
     </div>
 </body>
-
 </html>
