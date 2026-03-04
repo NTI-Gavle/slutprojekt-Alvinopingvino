@@ -1,3 +1,7 @@
+<?php
+include('../../backend/loggin_check.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +12,7 @@
     <!--CSS-->
     <link rel="stylesheet" href="../css/style.css">
 
-    <title>Start</title>
+    <title>Document</title>
 </head>
 
 <body>
@@ -25,7 +29,7 @@
             <div style="width: 90%;">
                 <div class="feed">
                     <?php
-                        include('../../backend/feed.php');
+                    include('../../backend/feed.php');
                     ?>
                 </div>
             </div>
@@ -35,4 +39,5 @@
 
     </div>
 </body>
+
 </html>

@@ -8,7 +8,7 @@
     <!--CSS-->
     <link rel="stylesheet" href="../css/style.css">
 
-    <title>Start</title>
+    <title>Document</title>
 </head>
 
 <body>
@@ -23,11 +23,7 @@
                 ?>
             </div>
             <div style="width: 90%;">
-                <div class="feed">
-                    <?php
-                        include('../../backend/feed.php');
-                    ?>
-                </div>
+
             </div>
             <div style="width: 5%; min-width:57.33px;">
             </div>
@@ -35,4 +31,5 @@
 
     </div>
 </body>
+
 </html>

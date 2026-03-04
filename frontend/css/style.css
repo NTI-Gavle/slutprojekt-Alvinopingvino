@@ -9,6 +9,7 @@
 }
 .feed{
     height: 100%; 
+    width: 60%;
     margin-left:auto; 
     margin-right: auto;
 
@@ -28,6 +29,9 @@
 .post{
     margin-top: 5%;
 }
+.post:hover{
+    background-color: whitesmoke;
+}
 .post_header{
     display: flex;
     flex-direction: row;
@@ -38,4 +42,10 @@
     -webkit-box-orient: vertical;
     line-clamp: 3;
     overflow: hidden;
+}
+
+/*Media Querries*/
+
+@media (max-width: 600px){
+    .feed{width: 90%};
 }

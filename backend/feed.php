@@ -14,7 +14,7 @@ if (isset($_GET['search'])){
     $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 else{
-    $stmt = $dbconn->query('SELECT * FROM posts');
+    $stmt = $dbconn->query('SELECT * FROM posts ORDER BY id DESC');
     $posts = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 }
 
