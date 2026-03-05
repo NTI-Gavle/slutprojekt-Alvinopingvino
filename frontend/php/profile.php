@@ -12,7 +12,7 @@ include('../../backend/loggin_check.php');
     <!--CSS-->
     <link rel="stylesheet" href="../css/style.css">
 
-    <title>Document</title>
+    <title>Profile</title>
 </head>
 
 <body>

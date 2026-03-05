@@ -8,7 +8,7 @@
     <!--CSS-->
     <link rel="stylesheet" href="../css/style.css">
 
-    <title>Start</title>
+    <title>Start / Feed</title>
 </head>
 
 <body>
@@ -25,7 +25,7 @@
             <div style="width: 90%;">
                 <div class="main">
                     <?php
-                        include('elements/feed.php');
+                    include('elements/feed.php');
                     ?>
                 </div>
             </div>

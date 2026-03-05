@@ -12,7 +12,7 @@ session_start();
     <!--CSS-->
     <link rel="stylesheet" href="../css/style.css">
 
-    <title>Document</title>
+    <title>Sign up</title>
 </head>
 
 <body>

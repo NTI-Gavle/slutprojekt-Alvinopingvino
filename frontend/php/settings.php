@@ -12,7 +12,7 @@ include('../../backend/loggin_check.php');
     <!--CSS-->
     <link rel="stylesheet" href="../css/style.css">
 
-    <title>Document</title>
+    <title>Settings</title>
 </head>
 
 <body>
@@ -27,7 +27,9 @@ include('../../backend/loggin_check.php');
                 ?>
             </div>
             <div style="width: 90%;">
+                <div class="main">
 
+                </div>
             </div>
             <div style="width: 5%; min-width:57.33px;">
             </div>
