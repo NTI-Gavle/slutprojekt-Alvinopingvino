@@ -1,5 +1,6 @@
 <?php
 include('../../backend/loggin_check.php');
+include('../../backend/retrieve_profile.php');
 ?>
 
 <!DOCTYPE html>
@@ -28,10 +29,22 @@ include('../../backend/loggin_check.php');
             </div>
             <div style="width: 90%;">
                 <div class="main">
-
+                    <div style="text-align: center; margin: 20px">
+                        <img class="pfp" src="../../backend/uploads/<?php echo ($user['profile_pic']) ?>" alt="pfp">
+                        <h2>
+                            <?php
+                            echo(htmlspecialchars($user['name']));
+                            echo('<p class="fs-6">#' . htmlspecialchars($user['id']) . '</p>');
+                            ?>
+                        </h2>
+                    </div>
+                    <?php
+                    include('../../backend/retrieve_posts_by_user.php');
+                    include('elements/feed.php');
+                    ?>
                 </div>
             </div>
-            <div style="width: 5%; min-width:57.33px;">
+            <div style=" width: 5%; min-width:57.33px;">
             </div>
         </div>
 

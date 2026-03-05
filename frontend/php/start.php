@@ -25,6 +25,7 @@
             <div style="width: 90%;">
                 <div class="main">
                     <?php
+                    include('../../backend/retrieve_posts.php');
                     include('elements/feed.php');
                     ?>
                 </div>

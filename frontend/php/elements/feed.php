@@ -1,6 +1,5 @@
 <?php
 include_once(__DIR__ . '/../../../backend/base_url.php');
-include(__DIR__ . '/../../../backend/retrieve_posts.php');
 
 foreach ($posts as $post) {
 
@@ -15,11 +14,11 @@ foreach ($posts as $post) {
                         <img class="pfp" src="' . BASE_URL . 'backend/uploads/' . $user['profile_pic'] . '" alt="pfp"">
                     </div>
                     <div style="margin-left: 5px;">
-                        <span class="username">' . $user['name'] . '</span>
-                        <h3 style="margin:0px"> ' . $post['title'] . '</h3>
+                        <span class="username">' . htmlspecialchars($user['name']) . '</span>
+                        <h3 style="margin:0px"> ' . htmlspecialchars($post['title']) . '</h3>
                     </div>
                 </div>
-                <p class="post_content"> ' . $post['content'] .  ' </p>
+                <p class="post_content"> ' . htmlspecialchars($post['content']) .  ' </p>
             </div>
         </a>
         <HR>

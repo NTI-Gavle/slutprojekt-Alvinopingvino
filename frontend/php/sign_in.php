@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +29,7 @@ session_start();
                 <div style="display: flex; justify-content:center;">
                     <form action="../../backend/sign_in.php" method="post" style="width:90%;">
                         <div class="input-group mb-3">
-                            <input style="text-align: center;" type="e-mail" class="form-control" name="email" placeholder="E-mail address">
+                            <input style="text-align: center;" type="email" class="form-control" name="email" placeholder="E-mail address">
                         </div>
                         <div class="input-group mb-3">
                             <input style="text-align: center;" type="password" class="form-control" name="password" placeholder="Password">

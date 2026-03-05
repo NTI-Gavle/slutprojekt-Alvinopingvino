@@ -1,4 +1,7 @@
 <?php
+if (!isset($_SESSION)){
+    session_start();
+}
 
 if (!defined('BASE_URL')) {
     define('BASE_URL', '/social_media/slutprojekt-Alvinopingvino/');

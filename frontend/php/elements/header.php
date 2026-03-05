@@ -8,7 +8,7 @@ include_once(__DIR__ . '/../../../backend/base_url.php');
         </div>
         <div style="width: 40%;">
             <form class="d-flex" role="search" method="get" action="<?php echo BASE_URL ?>frontend/php/start.php">
-                <input class="form-control" name="search" type="search" placeholder="Search" aria-label="Search" />
+                <input class="form-control" name="search" type="search" placeholder="Search in posts" aria-label="Search" />
             </form>
         </div>
         <div style="width: 30%;">
