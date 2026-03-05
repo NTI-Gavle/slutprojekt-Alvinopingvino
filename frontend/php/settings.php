@@ -18,12 +18,12 @@ include('../../backend/loggin_check.php');
 <body>
     <div class="d-flex flex-column vh-100">
         <?php
-        include('reusable/header.php');
+        include('elements/header.php');
         ?>
         <div class="page flex-grow-1">
             <div class="bg-body-tertiary" style="width: 5%; min-width: 57.33px; border-right: 1px solid lightgray;">
                 <?php
-                include('reusable/menu.php')
+                include('elements/menu.php')
                 ?>
             </div>
             <div style="width: 90%;">
