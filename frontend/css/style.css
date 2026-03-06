@@ -1,0 +1,103 @@
+/*Bootstrap css*/
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css');
+
+/*Own css*/
+.page {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+}
+
+.main {
+    height: 100%;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.username {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.username_link {
+    color: black;
+    text-decoration: none;
+}
+
+.pfp {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.post {
+    margin-top: 5%;
+}
+
+.post:hover {
+    background-color: whitesmoke;
+}
+
+.post_header {
+    display: flex;
+    flex-direction: row;
+}
+
+.post_title {
+    font-size: 15px;
+    font-weight: bold;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    overflow: hidden;
+}
+
+.post_content {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-clamp: 3;
+    overflow: hidden;
+}
+
+.error_message {
+    color: red;
+}
+
+.submit_btn {
+    margin-left: auto;
+    margin-right: auto;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+}
+
+input::placeholder {
+    text-align: center;
+}
+
+textarea::placeholder {
+    text-align: center;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.grow_with_text {
+    field-sizing: content;
+    resize: none;
+}
+
+/*Media Querries*/
+
+@media (max-width: 600px) {
+    .main {
+        width: 90%;
+    }
+}
