@@ -41,6 +41,10 @@ include('../../backend/retrieve_post.php')
                     </div>
                     <h3><?php echo (htmlspecialchars($post['title'])) ?></h3>
                     <p><?php echo (htmlspecialchars($post['content'])) ?></p>
+                    <HR>
+                    <?php
+                        include('elements/comment_section.php');
+                    ?>
                 </div>
             </div>
             <div style=" width: 5%; min-width:57.33px;">

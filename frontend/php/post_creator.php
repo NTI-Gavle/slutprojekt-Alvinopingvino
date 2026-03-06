@@ -37,7 +37,7 @@ include('../../backend/loggin_check.php');
                                 <input type="text" class="form-control" style="text-align: center" maxlength="100" name="title" placeholder="Title">
                             </div>
                             <div class="input-group mb-3">
-                                <textarea type="text" class="form-control" style="height:200px; resize: none" name="content" placeholder="Content"></textarea>
+                                <textarea type="text" class="form-control grow_with_text" style="min-height:200px;" name="content" placeholder="Content"></textarea>
                             </div>
                             <div class="input-group mb-3">
                                 <button type="submit" class="btn submit_btn">Publish</button>
