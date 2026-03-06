@@ -5,7 +5,6 @@ foreach ($posts as $post) {
 
     $stmt = $dbconn->query("SELECT * FROM users WHERE id = {$post['author']}");
     $user = $stmt->fetch(PDO::FETCH_ASSOC);   
-
     echo ('
         <a style="color: black; text-decoration: none;" href="' . BASE_URL . 'frontend/php/post.php?post_id=' . $post['id'] . '">
             <div class="post">
@@ -15,7 +14,7 @@ foreach ($posts as $post) {
                     </div>
                     <div style="margin-left: 5px;">
                         <span class="username">' . htmlspecialchars($user['name']) . '</span>
-                        <h3 style="margin:0px"> ' . htmlspecialchars($post['title']) . '</h3>
+                        <h3 class="post_title" style="margin:0px;"> ' . htmlspecialchars($post['title']) . '</h3>
                     </div>
                 </div>
                 <p class="post_content"> ' . htmlspecialchars($post['content']) .  ' </p>

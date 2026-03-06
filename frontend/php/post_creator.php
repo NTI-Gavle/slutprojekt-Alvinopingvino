@@ -34,7 +34,7 @@ include('../../backend/loggin_check.php');
                     <div style="display: flex; justify-content:center;">
                         <form action="../../backend/publish_post.php" method="post" style="width:90%;">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" style="text-align: center" name="title" placeholder="Title">
+                                <input type="text" class="form-control" style="text-align: center" maxlength="100" name="title" placeholder="Title">
                             </div>
                             <div class="input-group mb-3">
                                 <textarea type="text" class="form-control" style="height:200px; resize: none" name="content" placeholder="Content"></textarea>
