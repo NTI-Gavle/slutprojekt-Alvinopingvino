@@ -11,6 +11,6 @@ if (!isset($_GET['post_id'])) {
 }
 
 $id = (int)$_GET['post_id'];
-$stmt = $dbconn -> prepare('SELECT * FROM comments WHERE post = ?');
+$stmt = $dbconn -> prepare('SELECT * FROM comments WHERE post = ? ORDER BY id DESC');
 $stmt -> execute([$id]);
 $comments = $stmt -> fetchAll(PDO::FETCH_ASSOC);

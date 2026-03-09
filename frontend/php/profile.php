@@ -30,7 +30,7 @@ include('../../backend/retrieve_profile.php');
             <div style="width: 90%;">
                 <div class="main">
                     <div style="text-align: center; margin: 20px">
-                        <img class="pfp" src="../../backend/uploads/<?php echo ($user['profile_pic']) ?>" alt="pfp">
+                        <img class="large_pfp" src="../../backend/uploads/<?php echo ($user['profile_pic']) ?>" alt="pfp">
                         <h2>
                             <?php
                             echo(htmlspecialchars($user['name']));

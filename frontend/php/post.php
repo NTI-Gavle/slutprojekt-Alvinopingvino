@@ -30,7 +30,7 @@ include('../../backend/retrieve_post.php')
             <div style="width: 90%;">
                 <div class="main">
                     <div style="text-align: center; margin: 20px">
-                        <img class="pfp" src="../../backend/uploads/<?php echo ($author['profile_pic']) ?>" alt="pfp">
+                        <img class="large_pfp" src="../../backend/uploads/<?php echo ($author['profile_pic']) ?>" alt="pfp">
                         <h2>
                             <a class="username_link" href="profile.php?user_id=<?php echo ($author['id']) ?>">
                                 <?php
