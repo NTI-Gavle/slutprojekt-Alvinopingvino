@@ -12,11 +12,12 @@ include('../../backend/retrieve_post.php')
 
     <!--CSS-->
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js" defer></script>
 
-    <title>Post</title>
+    <title><?php echo (htmlspecialchars($post['title'])); ?></title>
 </head>
 
-<body>
+<body onload="RefreshLikes(<?php echo (htmlspecialchars($_GET['post_id'])) ?>), RefreshComments(<?php echo (htmlspecialchars($_GET['post_id'])) ?>)">
     <div class="d-flex flex-column vh-100">
         <?php
         include('elements/header.php');
@@ -30,7 +31,7 @@ include('../../backend/retrieve_post.php')
             <div style="width: 90%;">
                 <div class="main">
                     <div style="text-align: center; margin: 20px">
-                        <img class="large_pfp" src="../../backend/uploads/<?php echo ($author['profile_pic']) ?>" alt="pfp">
+                        <img class="large_pfp" src="../../backend/uploads/<?php echo (htmlspecialchars($author['profile_pic'])) ?>" alt="pfp">
                         <h2>
                             <a class="username_link" href="profile.php?user_id=<?php echo ($author['id']) ?>">
                                 <?php
@@ -41,9 +42,15 @@ include('../../backend/retrieve_post.php')
                     </div>
                     <h3><?php echo (htmlspecialchars($post['title'])) ?></h3>
                     <p><?php echo (htmlspecialchars($post['content'])) ?></p>
+                    <?php
+                    ?>
+                    <div style="display: flex; align-items: left;">
+                        <button id="like_btn" class="btn align_center" onclick="Like(<?php echo ($_GET['post_id']) ?>)"></button>
+                        <p id="like_counter" class="align_center" style="margin: 0px;"></p>
+                    </div>
                     <HR>
                     <?php
-                        include('elements/comment_section.php');
+                    include('elements/comment_section.php');
                     ?>
                 </div>
             </div>

@@ -10,7 +10,7 @@ foreach ($posts as $post) {
             <div class="post">
                 <div class="post_header">
                     <div>
-                        <img class="large_pfp" src="' . BASE_URL . 'backend/uploads/' . $user['profile_pic'] . '" alt="pfp"">
+                        <img class="large_pfp" src="' . BASE_URL . 'backend/uploads/' . htmlspecialchars($user['profile_pic']) . '" alt="pfp"">
                     </div>
                     <div style="margin-left: 5px;">
                         <span class="username">' . htmlspecialchars($user['name']) . '</span>

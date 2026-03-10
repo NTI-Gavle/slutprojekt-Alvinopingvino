@@ -11,10 +11,22 @@ if (!(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passw
 
 $stmt = $dbconn->prepare('SELECT * FROM users WHERE name = ?');
 $stmt->execute([$_POST['username']]);
-$user = $stmt->fetch(PDO::FETCH_ASSOC);
+$user_by_name = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$stmt = $dbconn->prepare('SELECT * FROM users WHERE email = ?');
+$stmt->execute([$_POST['email']]);
+$user_by_email = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if ($user != null) {
     $_SESSION['sign_up_error'] = "A user with that username already exists";
+    SendBack();
+}
+if ($user_by_email != null) {
+    $_SESSION['sign_up_error'] = "A user with that email already exists";
+    SendBack();
+}
+
+function SendBack(){
     header('location: ../frontend/php/sign_up.php');
     die();
 }

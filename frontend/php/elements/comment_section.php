@@ -1,7 +1,3 @@
-<?php
-include_once(__DIR__ . '/../../../backend/retrieve_comments.php');
-?>
-
 <div>
     <div class="center">
         <?php
@@ -10,40 +6,18 @@ include_once(__DIR__ . '/../../../backend/retrieve_comments.php');
         }
         $_SESSION['previous_page'] = $_SERVER['REQUEST_URI'];
         ?>
-        <form action="../../backend/publish_comment.php?post_id=<?php echo($id); ?>" method="post" style="width:90%;">
+        <div style="width:90%;">
             <div class="input-group mb-3">
-                <textarea type="text" class="form-control grow_with_text" name="content" placeholder="Comment"></textarea>
-                <button class="btn submit_btn align_center">
+                <textarea id="comment_input" type="text" class="form-control grow_with_text" name="content" placeholder="Comment"></textarea>
+                <button class="btn submit_btn align_center" onclick="Comment(<?php echo(htmlspecialchars($_GET['post_id'])); ?>)">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-upload" viewBox="0 0 16 16">
                         <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
                         <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708z" />
                     </svg>
                 </button>
             </div>
-        </form>
+        </div>
     </div>
-    <div class="comment_section">
-        <?php
-        foreach ($comments as $comment) {
-            $stmt = $dbconn->query("SELECT * FROM users WHERE id = {$comment['author']}");
-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            echo ('
-                <div>
-                    <div class="post_header">
-                        <div>
-                            <img class="small_pfp" src="' . BASE_URL . 'backend/uploads/' . $user['profile_pic'] . '" alt="pfp"">
-                        </div>
-                        <div style="margin-left: 5px;">
-                            <a class="username_link" href="profile.php?user_id=' . $user['id'] . '">
-                                <span class="username">' . htmlspecialchars($user['name']) . '</span>
-                            </a>
-                        </div>
-                    </div>
-                    <p class="post_content"> ' . htmlspecialchars($comment['content']) .  ' </p>
-                </div>
-            ');
-        }
-        ?>
+    <div id="comment_section" class="comment_section">
     </div>
 </div>
