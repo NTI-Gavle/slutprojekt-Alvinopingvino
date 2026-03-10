@@ -30,7 +30,7 @@
                     ?>
                 </div>
             </div>
-            <div style="width: 5%; min-width:57.33px;">
+            <div class="right">
             </div>
         </div>
 
