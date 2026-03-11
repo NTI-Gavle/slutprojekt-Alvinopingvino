@@ -50,7 +50,7 @@
                 ?>
                     <p>Already have an account? Sign in <a href="sign_in.php">here</a>!</p>
             </div>
-            <div class="right">
+            <div style="width: 5%; min-width:57.33px;">
             </div>
         </div>
 

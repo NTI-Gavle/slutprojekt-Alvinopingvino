@@ -54,7 +54,7 @@ include('../../backend/retrieve_post.php')
                     ?>
                 </div>
             </div>
-            <div class="right">
+            <div style=" width: 5%; min-width:57.33px;">
             </div>
         </div>
 

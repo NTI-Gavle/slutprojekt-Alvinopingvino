@@ -50,9 +50,10 @@ include('../../backend/loggin_check.php');
                         </form>
                     </div>
                 </div>
+                <div style="width: 5%; min-width:57.33px;">
+                </div>
             </div>
-            <div class="right">
-            </div>
+
         </div>
 </body>
 
