@@ -29,7 +29,7 @@
 }
 
 .align_center {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
 }
@@ -43,6 +43,12 @@
 .small_pfp {
     width: 30px;
     height: 30px;
+    border-radius: 50%;
+}
+
+.xlarge_pfp{
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
 }
 
@@ -104,6 +110,32 @@ textarea::placeholder {
 .grow_with_text {
     field-sizing: content;
     resize: none;
+}
+
+.img_wrapper{
+    position: relative;
+    display: inline-block;
+}
+
+.img_wrapper img{
+    display: block;
+}
+
+.edit_btn{
+    position:absolute;
+    top: 64px;
+    left: 64px;
+    padding: 0px;
+    border: 1px solid black;
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
 }
 
 /*Media Querries*/
