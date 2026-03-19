@@ -31,7 +31,7 @@ include('../../backend/retrieve_post.php')
             <div style="width: 90%;">
                 <div class="main">
                     <div style="text-align: center; margin: 20px">
-                        <img class="large_pfp" src="../../backend/uploads/<?php echo (htmlspecialchars($author['profile_pic'])) ?>" alt="pfp">
+                        <img class="xlarge_pfp" src="../../backend/uploads/<?php echo (htmlspecialchars($author['profile_pic'])) ?>" alt="pfp">
                         <h2>
                             <a class="username_link" href="profile.php?user_id=<?php echo ($author['id']) ?>">
                                 <?php
@@ -46,7 +46,7 @@ include('../../backend/retrieve_post.php')
                     ?>
                     <div style="display: flex; align-items: left;">
                         <button id="like_btn" class="btn align_center" onclick="Like(<?php echo ($_GET['post_id']) ?>)"></button>
-                        <p id="like_counter" class="align_center" style="margin: 0px;"></p>
+                        <p id="like_counter" class="align_center" style="margin-bottom: 0px; margin-left: 5px;"></p>
                     </div>
                     <HR>
                     <?php

@@ -57,5 +57,14 @@ function RefreshComments(post_id) {
                 `
             });
         })
+}
 
+function setupUpload(){
+    const input = document.getElementById("fileInput");
+
+    if (input){
+        input.addEventListener("change", function() {
+            this.form.submit();
+        })
+    }
 }

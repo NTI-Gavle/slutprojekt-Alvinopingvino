@@ -38,7 +38,7 @@
                             <input style="text-align: center;" type="password" class="form-control" name="password" placeholder="Password">
                         </div>
                         <div class="input-group mb-3">
-                            <button type="submit" class="btn submit_btn">Sign up</button>
+                            <button type="submit" class="btn">Sign up</button>
                         </div>
                     </form>
                 </div>
