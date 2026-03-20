@@ -59,6 +59,21 @@ function RefreshComments(post_id) {
         })
 }
 
+function deletePost($post_id){
+    fetch(`../../backend/delete_post.php?post_id=${$post_id}`)
+    .then(response => response.text()).then(data =>{
+        document.getElementById('delete_error').innerText = data;
+        if (data == ""){
+            window.location.href="../php/start.php";
+        }
+    });
+}
+
+function deleteComment($comment_id){
+    fetch(`../../backend/delete_comment.php?comment_id=${$comment_id}`);
+    window.location.href="../php/start.php";
+}
+
 function setupUpload(){
     const input = document.getElementById("fileInput");
 

@@ -70,6 +70,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $message = "Image cropped to square!";
             $uploadedImage = $path;
 
+            $stmt = $dbconn -> query('SELECT profile_pic FROM users WHERE id = ' . $_SESSION['user_id']);
+            $pfp = $stmt -> fetch(PDO::FETCH_ASSOC);
+            if ($pfp['profile_pic'] != "default_pfp.jpg"){
+                unlink('uploads/' . $pfp['profile_pic']);
+            }
             $dbconn -> query("UPDATE users SET profile_pic = '$newName' WHERE id = " . $_SESSION['user_id']);
         }
     }

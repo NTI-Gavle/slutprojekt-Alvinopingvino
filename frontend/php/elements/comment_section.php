@@ -1,3 +1,7 @@
+<?php
+    include('../../backend/admin_check.php');
+?>
+
 <div>
     <div class="center">
         <?php

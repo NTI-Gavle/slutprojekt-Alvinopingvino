@@ -1,6 +1,7 @@
 <?php
 include('../../backend/loggin_check.php');
-include('../../backend/retrieve_post.php')
+include('../../backend/retrieve_post.php');
+include('../../backend/admin_check.php');
 ?>
 
 <!DOCTYPE html>
@@ -48,6 +49,15 @@ include('../../backend/retrieve_post.php')
                         <button id="like_btn" class="btn align_center" onclick="Like(<?php echo ($_GET['post_id']) ?>)"></button>
                         <p id="like_counter" class="align_center" style="margin-bottom: 0px; margin-left: 5px;"></p>
                     </div>
+                    <?php
+                    if ($admin_check['is_admin'] == 1) {
+                        echo ('
+                        <div style="margin-top:5px;">
+                            <button onclick="deletePost(' . $_GET['post_id'] . ')" class="btn" style="margin-right:5px; color:red;">Delete Post</button>
+                            <p id="delete_error" style="color:red;"></p>
+                        </div>');
+                    }
+                    ?>
                     <HR>
                     <?php
                     include('elements/comment_section.php');

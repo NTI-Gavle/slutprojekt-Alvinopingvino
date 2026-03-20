@@ -11,7 +11,7 @@ if (!isset($_GET['post_id'])) {
 }
 
 $stmt = $dbconn -> prepare('SELECT comments.content, users.id, users.name, users.profile_pic 
-FROM comments JOIN users ON comments.author = users.id WHERE comments.post = ? ORDER BY comments.id DESC');
+FROM comments JOIN users ON comments.author = users.id WHERE comments.post_id = ? ORDER BY comments.id DESC');
 
 $stmt -> execute([$_GET['post_id']]);
 $comments = $stmt -> fetchAll(PDO::FETCH_ASSOC);
