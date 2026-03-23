@@ -47,13 +47,15 @@ include('../../backend/retrieve_settings.php');
                             </div>
                         </div>
                             <div>
-                                <input class="form-control" maxlength="20" value="<?php echo (htmlspecialchars($user['name'])); ?>">
-                                </input>
+                                <input id="name_input" class="form-control" style="margin-top: 5px;" maxlength="20" value="<?php echo (htmlspecialchars($user['name'])); ?>" placeholder="username"></input>
+                                <input id="email_input" class="form-control" style="margin-top: 5px;" maxlength="50" value="<?php echo (htmlspecialchars($user['email'])); ?>" placeholder="email adress"></input>
                             </div>
                     </div>
                     <div style="text-align: center;">
-                        <button class="btn">Save</button>
+                        <button class="btn" onclick="SaveSettings()">Save</button>
                         <button class="btn">Sign out</button>
+                        <p id="settings_error" style="color:red;"></p>
+                        <p id="succeded" style="color:green;"></p>
                     </div>
                 </div>
             </div>

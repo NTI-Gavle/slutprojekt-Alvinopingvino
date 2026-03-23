@@ -59,19 +59,19 @@ function RefreshComments(post_id) {
         })
 }
 
-function deletePost($post_id){
-    fetch(`../../backend/delete_post.php?post_id=${$post_id}`)
+function deletePost(post_id){
+
+    if (!confirm("Are you sure you want to delete this post?")) {
+        return;
+    }
+
+    fetch(`../../backend/delete_post.php?post_id=${post_id}`)
     .then(response => response.text()).then(data =>{
         document.getElementById('delete_error').innerText = data;
         if (data == ""){
             window.location.href="../php/start.php";
         }
     });
-}
-
-function deleteComment($comment_id){
-    fetch(`../../backend/delete_comment.php?comment_id=${$comment_id}`);
-    window.location.href="../php/start.php";
 }
 
 function setupUpload(){
@@ -82,4 +82,33 @@ function setupUpload(){
             this.form.submit();
         })
     }
+}
+
+function SaveSettings(){
+    const name = document.getElementById('name_input').value;
+    const email = document.getElementById('email_input').value;
+
+    fetch(`../../backend/save_settings.php`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: `name=${name}&email=${email}`
+    }).then(response => response.json()).then(data => {
+        const settings_error = document.getElementById("settings_error");
+        settings_error.innerHTML = "";    
+
+        const succeded = document.getElementById("succeded");
+        succeded.innerHTML = "";
+
+        if (data.name_error != null){
+            settings_error.innerHTML += data.name_error + "<br>";
+        }
+        if (data.email_error != null){
+            settings_error.innerText += data.email_error;
+        }
+        if (data.succeded != null){
+            succeded.innerHTML = data.succeded;
+        }
+    });
 }
