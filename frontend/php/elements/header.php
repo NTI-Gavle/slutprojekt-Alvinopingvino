@@ -2,16 +2,16 @@
 include_once(__DIR__ . '/../../../backend/base_url.php');
 ?>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary" style="border-bottom: 1px solid lightgray;">
-        <div class="container-fluid" style="width: 30%;">
-            <a class="navbar-brand" href="<?php echo(BASE_URL) ?>frontend/php/start.php">Kvack</a>
+<nav class="bg-body-tertiary d-flex" style="border-bottom: 1px solid lightgray;">
+        <div class="left d-flex justify-content-center align-items-center" style="border: none;">
+            <h5 class="font-weight-bold mb-0">Kvack</h5>
         </div>
-        <div style="width: 40%;">
+        <div class="my-1 mx-auto" style="width: 60%;">
             <form class="d-flex" role="search" method="get" action="<?php echo(BASE_URL) ?>frontend/php/start.php">
                 <input class="form-control" name="search" type="search" placeholder="Search in posts" aria-label="Search" />
             </form>
         </div>
-        <div style="width: 30%;">
+        <div class="right">
 
         </div>
     </nav>

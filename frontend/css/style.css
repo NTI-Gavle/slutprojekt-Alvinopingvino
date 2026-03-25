@@ -118,7 +118,7 @@ textarea::placeholder {
         margin: 10px;
     }
     .right{
-        max-width: 0px;
+        min-width: 0px;
         width: 0px;
     }
 }

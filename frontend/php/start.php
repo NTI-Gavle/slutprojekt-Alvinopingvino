@@ -28,7 +28,7 @@
                     include('elements/feed.php');
                     ?>
                 </div>
-            <div class="flex-shrink-0" class="right">
+            <div class="flex-shrink-0 right">
             </div>
         </div>
     </div>
