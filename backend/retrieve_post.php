@@ -22,3 +22,7 @@ if ($post == null) {
 $stmt = $dbconn->prepare('SELECT * FROM users WHERE id = ?');
 $stmt->execute([$post['author']]);
 $author = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$stmt = $dbconn->prepare('SELECT file FROM files WHERE post_id = ?');
+$stmt->execute([$post['id']]);
+$files = $stmt -> fetchAll(PDO::FETCH_COLUMN);

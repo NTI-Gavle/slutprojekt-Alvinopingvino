@@ -21,7 +21,7 @@ include('../../backend/retrieve_profile.php');
         <?php
         include('elements/header.php');
         ?>
-        <div class="page flex-grow-1">
+        <div class="d-flex flex-grow-1" style="min-height:0px;">
             <div class="bg-body-tertiary" style="width: 5%; min-width: 57.33px; border-right: 1px solid lightgray;">
                 <?php
                 include('elements/menu.php')
@@ -30,7 +30,7 @@ include('../../backend/retrieve_profile.php');
             <div style="width: 90%;">
                 <div class="main">
                     <div style="text-align: center; margin: 20px">
-                        <img class="xlarge_pfp" src="../../backend/uploads/<?php echo (htmlspecialchars($user['profile_pic'])) ?>" alt="pfp">
+                        <img class="xlarge_pfp rounded-circle" src="../../backend/uploads/<?php echo (htmlspecialchars($user['profile_pic'])) ?>" alt="pfp">
                         <h2>
                             <?php
                             echo(htmlspecialchars($user['name']));

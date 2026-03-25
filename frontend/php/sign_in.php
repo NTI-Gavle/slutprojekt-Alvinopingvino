@@ -16,7 +16,7 @@
         <?php
         include('elements/header.php');
         ?>
-        <div class="page flex-grow-1">
+        <div class="d-flex flex-grow-1" style="min-height:0px;">
             <div class="bg-body-tertiary" style="width: 5%; min-width: 57.33px; border-right: 1px solid lightgray;">
                 <?php
                 include('elements/menu.php')
@@ -41,7 +41,7 @@
                 </div>
                 <?php
                     if (isset($_SESSION['sign_in_error'])) {
-                        echo ('<p class="error_message">' . $_SESSION['sign_in_error'] . '</p>');
+                        echo ('<p class="text-danger">' . $_SESSION['sign_in_error'] . '</p>');
                         unset($_SESSION['sign_in_error']);
                     }
                 ?>

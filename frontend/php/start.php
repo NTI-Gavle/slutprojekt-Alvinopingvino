@@ -8,7 +8,7 @@
     <!--CSS-->
     <link rel="stylesheet" href="../css/style.css">
 
-    <title>Start / Feed</title>
+    <title>Home</title>
 </head>
 
 <body>
@@ -16,24 +16,21 @@
         <?php
         include('elements/header.php');
         ?>
-        <div class="page flex-grow-1">
-            <div class="bg-body-tertiary" style="width: 5%; min-width: 57.33px; border-right: 1px solid lightgray;">
+        <div class="d-flex flex-grow-1" style="min-height:0px;">
+            <div class="bg-body-tertiary flex-shrink-0 left">
                 <?php
                 include('elements/menu.php')
                 ?>
             </div>
-            <div style="width: 90%;">
                 <div class="main">
                     <?php
                     include('../../backend/retrieve_posts.php');
                     include('elements/feed.php');
                     ?>
                 </div>
-            </div>
-            <div style="width: 5%; min-width:57.33px;">
+            <div class="flex-shrink-0" class="right">
             </div>
         </div>
-
     </div>
 </body>
 </html>

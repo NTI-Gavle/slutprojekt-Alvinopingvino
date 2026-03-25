@@ -42,13 +42,13 @@ function RefreshComments(post_id) {
             comments.forEach(comment => {
                 container.innerHTML += `
                 <div>
-                    <div class="post_header">
+                    <div class="d-flex flex-row">
                         <div>
-                            <img class="small_pfp" src="../../backend/uploads/${comment.profile_pic}" alt="pfp">
+                            <img class="small_pfp rounded-circle" src="../../backend/uploads/${comment.profile_pic}" alt="pfp">
                         </div>
                         <div style="margin-left: 5px;">
-                            <a class="username_link" href="profile.php?user_id=${comment.id}">
-                                <span class="username">${comment.name}</span>
+                            <a class="text-dark fw-bold text-decoration-underline" href="profile.php?user_id=${comment.id}">
+                                <span>${comment.name}</span>
                             </a>
                         </div>
                     </div>
@@ -111,4 +111,30 @@ function SaveSettings(){
             succeded.innerHTML = data.succeded;
         }
     });
+}
+
+function DisplayImages(){
+    const input = document.getElementById("imageInput");
+    const preview = document.getElementById('previewContainer');
+
+    input.addEventListener('change', () => {
+        preview.innerHTML = "";
+
+        const files = input.files;
+        
+        Array.from(files).forEach(file => {
+            if (!file.type.startsWith('image/')) return;
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.style.maxHeight = "200px";
+                img.style.padding = "2px";
+                img.classList = "rounded";
+                preview.appendChild(img);
+            };
+            reader.readAsDataURL(file);
+        })
+    })
 }

@@ -23,7 +23,7 @@ include('../../backend/admin_check.php');
         <?php
         include('elements/header.php');
         ?>
-        <div class="page flex-grow-1">
+        <div class="d-flex flex-grow-1" style="min-height:0px;">
             <div class="bg-body-tertiary" style="width: 5%; min-width: 57.33px; border-right: 1px solid lightgray;">
                 <?php
                 include('elements/menu.php')
@@ -32,9 +32,9 @@ include('../../backend/admin_check.php');
             <div style="width: 90%;">
                 <div class="main">
                     <div style="text-align: center; margin: 20px">
-                        <img class="xlarge_pfp" src="../../backend/uploads/<?php echo (htmlspecialchars($author['profile_pic'])) ?>" alt="pfp">
+                        <img class="xlarge_pfp rounded-circle" src="../../backend/uploads/<?php echo (htmlspecialchars($author['profile_pic'])) ?>" alt="pfp">
                         <h2>
-                            <a class="username_link" href="profile.php?user_id=<?php echo ($author['id']) ?>">
+                            <a class="text-dark text-decoration-none" href="profile.php?user_id=<?php echo ($author['id']) ?>">
                                 <?php
                                 echo (htmlspecialchars($author['name']));
                                 ?>
@@ -43,18 +43,23 @@ include('../../backend/admin_check.php');
                     </div>
                     <h3><?php echo (htmlspecialchars($post['title'])) ?></h3>
                     <p><?php echo (htmlspecialchars($post['content'])) ?></p>
-                    <?php
-                    ?>
-                    <div style="display: flex; align-items: left;">
-                        <button id="like_btn" class="btn align_center" onclick="Like(<?php echo ($_GET['post_id']) ?>)"></button>
-                        <p id="like_counter" class="align_center" style="margin-bottom: 0px; margin-left: 5px;"></p>
+                    <div class="d-flex flex-wrap justify-content-center w-100 mb-3">
+                        <?php
+                        foreach ($files as $img) {
+                            echo ('<img class="m-1 rounded" src="../../backend/uploads/' . $img . '" style="max-height: 200px;">');
+                        }
+                        ?>
+                    </div>
+                    <div style="display: flex; align-items: left; margin-top:5px;">
+                        <button id="like_btn" class="btn d-inline-flex align-items-center justify-content-center" onclick="Like(<?php echo ($_GET['post_id']) ?>)"></button>
+                        <p id="like_counter" class="d-inline-flex align-items-center justify-content-center" style="margin-bottom: 0px; margin-left: 5px;"></p>
                     </div>
                     <?php
-                    if ($admin_check['is_admin'] == 1) {
+                    if ($admin_check['is_admin'] == 1 || $post['author'] == $_SESSION['user_id']) {
                         echo ('
                         <div style="margin-top:5px;">
-                            <button onclick="deletePost(' . $_GET['post_id'] . ')" class="btn" style="margin-right:5px; color:red;">Delete Post</button>
-                            <p id="delete_error" style="color:red;"></p>
+                            <button onclick="deletePost(' . $_GET['post_id'] . ')" class="btn text-danger" style="margin-right:5px;">Delete Post</button>
+                            <p id="delete_error" class="text-danger"></p>
                         </div>');
                     }
                     ?>
