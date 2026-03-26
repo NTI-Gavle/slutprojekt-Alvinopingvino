@@ -1,6 +1,10 @@
     <?php
     include_once(__DIR__ . '/../../../backend/base_url.php');
 
+    if (count($posts) == 0){
+        echo ('<p class="text-center">This account has not published any posts yet!</p>');
+    }
+
     foreach ($posts as $post) {
 
         $stmt = $dbconn->query("SELECT * FROM users WHERE id = {$post['author']}");
