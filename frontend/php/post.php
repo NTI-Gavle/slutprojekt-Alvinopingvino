@@ -24,14 +24,14 @@ include('../../backend/admin_check.php');
         include('elements/header.php');
         ?>
         <div class="d-flex flex-grow-1" style="min-height:0px;">
-            <div class="bg-body-tertiary" style="width: 5%; min-width: 57.33px; border-right: 1px solid lightgray;">
+            <div class="bg-body-tertiary left">
                 <?php
                 include('elements/menu.php')
                 ?>
             </div>
             <div style="width: 90%;">
                 <div class="main">
-                    <div style="text-align: center; margin: 20px">
+                    <div class="text-center m-3">
                         <img class="xlarge_pfp rounded-circle" src="../../backend/uploads/<?php echo (htmlspecialchars($author['profile_pic'])) ?>" alt="pfp">
                         <h2>
                             <a class="text-dark text-decoration-none" href="profile.php?user_id=<?php echo ($author['id']) ?>">
@@ -50,15 +50,15 @@ include('../../backend/admin_check.php');
                         }
                         ?>
                     </div>
-                    <div style="display: flex; align-items: left; margin-top:5px;">
+                    <div class="text-left d-flex">
                         <button id="like_btn" class="btn d-inline-flex align-items-center justify-content-center" onclick="Like(<?php echo ($_GET['post_id']) ?>)"></button>
-                        <p id="like_counter" class="d-inline-flex align-items-center justify-content-center" style="margin-bottom: 0px; margin-left: 5px;"></p>
+                        <p id="like_counter" class="d-inline-flex align-items-center justify-content-center mb-0 ms-1"></p>
                     </div>
                     <?php
                     if ($admin_check['is_admin'] == 1 || $post['author'] == $_SESSION['user_id']) {
                         echo ('
-                        <div style="margin-top:5px;">
-                            <button onclick="deletePost(' . $_GET['post_id'] . ')" class="btn text-danger" style="margin-right:5px;">Delete Post</button>
+                        <div class="mt-1">
+                            <button onclick="deletePost(' . $_GET['post_id'] . ')" class="btn text-danger mr-1">Delete Post</button>
                             <p id="delete_error" class="text-danger"></p>
                         </div>');
                     }
@@ -69,7 +69,7 @@ include('../../backend/admin_check.php');
                     ?>
                 </div>
             </div>
-            <div style=" width: 5%; min-width:57.33px;">
+            <div class="right">
             </div>
         </div>
 

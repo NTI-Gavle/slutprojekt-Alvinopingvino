@@ -7,8 +7,8 @@ include_once(__DIR__ . '/../../../backend/base_url.php');
             <h5 class="font-weight-bold mb-0">Kvack</h5>
         </div>
         <div class="my-1 mx-auto" style="width: 60%;">
-            <form class="d-flex" role="search" method="get" action="<?php echo(BASE_URL) ?>frontend/php/start.php">
-                <input class="form-control" name="search" type="search" placeholder="Search in posts" aria-label="Search" />
+            <form class="d-flex justify-content-center" role="search" method="get" action="<?php echo(BASE_URL) ?>frontend/php/start.php">
+                <input class="form-control" style="max-width: 500px;" name="search" type="search" placeholder="Search in posts" aria-label="Search" />
             </form>
         </div>
         <div class="right">

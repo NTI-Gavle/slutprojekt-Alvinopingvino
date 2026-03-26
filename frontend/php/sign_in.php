@@ -17,7 +17,7 @@
         include('elements/header.php');
         ?>
         <div class="d-flex flex-grow-1" style="min-height:0px;">
-            <div class="bg-body-tertiary" style="width: 5%; min-width: 57.33px; border-right: 1px solid lightgray;">
+            <div class="bg-body-tertiary left">
                 <?php
                 include('elements/menu.php')
                 ?>
@@ -34,8 +34,8 @@
                         <div class="input-group mb-3">
                             <input style="text-align: center;" type="password" class="form-control" name="password" placeholder="Password">
                         </div>
-                        <div class="input-group mb-3">
-                            <button type="submit" class="btn" style="margin-left:auto; margin-right:auto; border: var(--bs-border-width) solid var(--bs-border-color);">Sign in</button>
+                        <div class="input-group mb-3 d-flex justify-content-center">
+                            <button type="submit" class="btn">Sign in</button>
                         </div>
                     </form>
                 </div>
@@ -47,7 +47,7 @@
                 ?>
                     <p>Don't have an account? Sign up <a href="sign_up.php">here</a>!</p>
             </div>
-            <div style="width: 5%; min-width:57.33px;">
+            <div class="right">
             </div>
         </div>
 
