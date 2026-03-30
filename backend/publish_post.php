@@ -10,7 +10,7 @@ if (!(isset($_POST['title']) && isset($_POST['content']))) {
 }
 
 $stmt = $dbconn->prepare('INSERT INTO posts(author, title, content) values(?, ?, ?)');
-$stmt->execute([$_SESSION['user_id'], $_POST['title'], $_POST['content']]);
+$stmt->execute([$_SESSION['user_id'], htmlspecialchars($_POST['title']), htmlspecialchars($_POST['content'])]);
 
 $post_id = $dbconn -> lastInsertId();
 

@@ -20,6 +20,10 @@ include('../../backend/retrieve_settings.php');
 </head>
 
 <body onload="setupUpload()">
+    <a href="#main-content" class="visually-hidden-focusable">
+        Skip to main content
+    </a>
+
     <div class="d-flex flex-column vh-100">
         <?php
         include('elements/header.php');
@@ -30,7 +34,7 @@ include('../../backend/retrieve_settings.php');
                 include('elements/menu.php')
                 ?>
             </div>
-            <div class="main">
+            <main class="main" id="main-content">
                 <div style="text-align: center; margin: 20px">
                     <div class="d-inline-flex align-items-center justify-content-center">
                         <div class="img_wrapper">
@@ -55,7 +59,7 @@ include('../../backend/retrieve_settings.php');
                     <p id="settings_error" class="text-danger"></p>
                     <p id="succeded" style="color:green;"></p>
                 </div>
-            </div>
+            </main>
             <div class="right">
             </div>
         </div>

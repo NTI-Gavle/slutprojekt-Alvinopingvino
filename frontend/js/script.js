@@ -59,32 +59,32 @@ function RefreshComments(post_id) {
         })
 }
 
-function deletePost(post_id){
+function deletePost(post_id) {
 
     if (!confirm("Are you sure you want to delete this post?")) {
         return;
     }
 
     fetch(`../../backend/delete_post.php?post_id=${post_id}`)
-    .then(response => response.text()).then(data =>{
-        document.getElementById('delete_error').innerText = data;
-        if (data == ""){
-            window.location.href="../php/start.php";
-        }
-    });
+        .then(response => response.text()).then(data => {
+            document.getElementById('delete_error').innerText = data;
+            if (data == "") {
+                window.location.href = "../php/start.php";
+            }
+        });
 }
 
-function setupUpload(){
+function setupUpload() {
     const input = document.getElementById("fileInput");
 
-    if (input){
-        input.addEventListener("change", function() {
+    if (input) {
+        input.addEventListener("change", function () {
             this.form.submit();
         })
     }
 }
 
-function SaveSettings(){
+function SaveSettings() {
     const name = document.getElementById('name_input').value;
     const email = document.getElementById('email_input').value;
 
@@ -96,24 +96,24 @@ function SaveSettings(){
         body: `name=${name}&email=${email}`
     }).then(response => response.json()).then(data => {
         const settings_error = document.getElementById("settings_error");
-        settings_error.innerHTML = "";    
+        settings_error.innerHTML = "";
 
         const succeded = document.getElementById("succeded");
         succeded.innerHTML = "";
 
-        if (data.name_error != null){
+        if (data.name_error != null) {
             settings_error.innerHTML += data.name_error + "<br>";
         }
-        if (data.email_error != null){
+        if (data.email_error != null) {
             settings_error.innerText += data.email_error;
         }
-        if (data.succeded != null){
+        if (data.succeded != null) {
             succeded.innerHTML = data.succeded;
         }
     });
 }
 
-function DisplayImages(){
+function DisplayImages() {
     const input = document.getElementById("imageInput");
     const preview = document.getElementById('previewContainer');
 
@@ -121,7 +121,7 @@ function DisplayImages(){
         preview.innerHTML = "";
 
         const files = input.files;
-        
+
         Array.from(files).forEach(file => {
             if (!file.type.startsWith('image/')) return;
 

@@ -12,6 +12,10 @@
 </head>
 
 <body>
+    <a href="#main-content" class="visually-hidden-focusable">
+        Skip to main content
+    </a>
+
     <div class="d-flex flex-column vh-100">
         <?php
         include('elements/header.php');
@@ -19,18 +23,19 @@
         <div class="d-flex flex-grow-1" style="min-height:0px;">
             <div class="bg-body-tertiary flex-shrink-0 left">
                 <?php
-                include('elements/menu.php')
+                include('elements/menu.php');
                 ?>
             </div>
-                <div class="main">
-                    <?php
-                    include('../../backend/retrieve_posts.php');
-                    include('elements/feed.php');
-                    ?>
-                </div>
+            <main class="main" id="main-content" tabindex="-1">
+                <?php
+                include('../../backend/retrieve_posts.php');
+                include('elements/feed.php');
+                ?>
+            </main>
             <div class="flex-shrink-0 right">
             </div>
         </div>
     </div>
 </body>
+
 </html>

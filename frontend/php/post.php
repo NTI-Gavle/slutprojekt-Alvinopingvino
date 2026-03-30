@@ -19,6 +19,10 @@ include('../../backend/admin_check.php');
 </head>
 
 <body onload="RefreshLikes(<?php echo (htmlspecialchars($_GET['post_id'])) ?>), RefreshComments(<?php echo (htmlspecialchars($_GET['post_id'])) ?>)">
+    <a href="#main-content" class="visually-hidden-focusable">
+        Skip to main content
+    </a>
+
     <div class="d-flex flex-column vh-100">
         <?php
         include('elements/header.php');
@@ -30,7 +34,7 @@ include('../../backend/admin_check.php');
                 ?>
             </div>
             <div style="width: 90%;">
-                <div class="main">
+                <main class="main" id="main-content">
                     <div class="text-center m-3">
                         <img class="xlarge_pfp rounded-circle" src="../../backend/uploads/<?php echo (htmlspecialchars($author['profile_pic'])) ?>" alt="pfp">
                         <h2>
@@ -46,7 +50,7 @@ include('../../backend/admin_check.php');
                     <div class="d-flex flex-wrap justify-content-center w-100 mb-3">
                         <?php
                         foreach ($files as $img) {
-                            echo ('<img class="m-1 rounded" src="../../backend/uploads/' . $img . '" style="max-height: 200px;">');
+                            echo ('<img src="../../backend/uploads/' . $img . '" alt="user-uploaded image" class="m-1 rounded" style="max-height: 200px;">');
                         }
                         ?>
                     </div>
@@ -67,7 +71,7 @@ include('../../backend/admin_check.php');
                     <?php
                     include('elements/comment_section.php');
                     ?>
-                </div>
+                </main>
             </div>
             <div class="right">
             </div>

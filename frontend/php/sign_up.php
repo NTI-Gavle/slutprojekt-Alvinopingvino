@@ -12,6 +12,10 @@
 </head>
 
 <body>
+    <a href="#main-content" class="visually-hidden-focusable">
+        Skip to main content
+    </a>
+
     <div class="d-flex flex-column vh-100">
         <?php
         include('elements/header.php');
@@ -22,7 +26,7 @@
                 include('elements/menu.php')
                 ?>
             </div>
-            <div class="main" style="text-align: center;">
+            <main class="main" style="text-align: center;" id="main-content">
                 <div style="text-align: center; margin: 20px">
                     <h2>Sign up</h2>
                 </div>
@@ -43,13 +47,13 @@
                     </form>
                 </div>
                 <?php
-                    if (isset($_SESSION['sign_up_error'])) {
-                        echo ('<p class="text-danger">' . $_SESSION['sign_up_error'] . '</p>');
-                        unset($_SESSION['sign_up_error']);
-                    }
+                if (isset($_SESSION['sign_up_error'])) {
+                    echo ('<p class="text-danger">' . $_SESSION['sign_up_error'] . '</p>');
+                    unset($_SESSION['sign_up_error']);
+                }
                 ?>
-                    <p>Already have an account? Sign in <a href="sign_in.php">here</a>!</p>
-            </div>
+                <p>Already have an account? Sign in <a href="sign_in.php">here</a>!</p>
+            </main>
             <div class="right">
             </div>
         </div>
