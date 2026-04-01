@@ -46,13 +46,8 @@ include('../../backend/admin_check.php');
                         </h2>
                     </div>
                     <h3><?php echo (htmlspecialchars($post['title'])) ?></h3>
-                    <p><?php echo (htmlspecialchars($post['content'])) ?></p>
-                    <div class="d-flex flex-wrap justify-content-center w-100 mb-3">
-                        <?php
-                        foreach ($files as $img) {
-                            echo ('<img src="../../backend/uploads/' . $img . '" alt="user-uploaded image" class="m-1 rounded" style="max-height: 200px;">');
-                        }
-                        ?>
+                    <div class="post_content">
+                        <?php echo ($post['content']) ?>
                     </div>
                     <div class="text-left d-flex">
                         <button id="like_btn" class="btn d-inline-flex align-items-center justify-content-center" onclick="Like(<?php echo ($_GET['post_id']) ?>)"></button>

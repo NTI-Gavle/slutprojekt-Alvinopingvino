@@ -74,16 +74,6 @@ function deletePost(post_id) {
         });
 }
 
-function setupUpload() {
-    const input = document.getElementById("fileInput");
-
-    if (input) {
-        input.addEventListener("change", function () {
-            this.form.submit();
-        })
-    }
-}
-
 function SaveSettings() {
     const name = document.getElementById('name_input').value;
     const email = document.getElementById('email_input').value;
@@ -113,28 +103,38 @@ function SaveSettings() {
     });
 }
 
-function DisplayImages() {
-    const input = document.getElementById("imageInput");
-    const preview = document.getElementById('previewContainer');
-
-    input.addEventListener('change', () => {
-        preview.innerHTML = "";
-
-        const files = input.files;
-
-        Array.from(files).forEach(file => {
-            if (!file.type.startsWith('image/')) return;
-
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                const img = document.createElement('img');
-                img.src = e.target.result;
-                img.style.maxHeight = "200px";
-                img.style.padding = "2px";
-                img.classList = "rounded";
-                preview.appendChild(img);
-            };
-            reader.readAsDataURL(file);
-        })
+function setupUpload() {
+    const input = document.getElementById("fileInput");
+    input.addEventListener("change", function (e) {
+        e.preventDefault();
+        UploadImage(this.files[0]);
     })
+}
+
+function UploadImage(file){
+    const formData = new FormData()
+    formData.append("image", file)
+
+    fetch(`../../backend/upload_img.php?`, {
+        method: "POST",
+        body: formData
+    }).then(response => response.json()).then(data => {
+        InsertImage(`[img]${data.path}[/img]`)
+    })
+}
+
+function InsertImage(bb_code){
+    const text_area = document.getElementById('content_input');
+
+    const start = text_area.selectionStart
+    const end = text_area.selectionEnd
+
+    const before = text_area.value.substring(0, start)
+    const after = text_area.value.substring(end)
+
+    text_area.value = before + bb_code + after
+
+    text_area.selectionStart = text_area.selectionEnd = start + bb_code.length
+
+    text_area.focus()
 }

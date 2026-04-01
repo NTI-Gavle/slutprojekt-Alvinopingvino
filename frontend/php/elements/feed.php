@@ -9,6 +9,7 @@
 
         $stmt = $dbconn->query("SELECT * FROM users WHERE id = {$post['author']}");
         $user = $stmt->fetch(PDO::FETCH_ASSOC);   
+        $post['content'] = preg_replace('/\[img.*?\].*?\[\/img\]/is', '', $post['content']);
         echo ('
             <a class="link-dark text-decoration-none" href="' . BASE_URL . 'frontend/php/post.php?post_id=' . $post['id'] . '">
                 <div class="mt-3 post">

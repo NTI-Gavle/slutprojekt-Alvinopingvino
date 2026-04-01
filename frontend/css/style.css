@@ -114,6 +114,13 @@ textarea::placeholder {
     outline: 2px solid blue !important;
 }
 
+.post_content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+}
+
 /*Media Querries*/
 
 @media (max-width: 600px) {
