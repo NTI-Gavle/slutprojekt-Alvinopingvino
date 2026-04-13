@@ -34,7 +34,7 @@ include('../../backend/retrieve_settings.php');
                 include('elements/menu.php')
                 ?>
             </div>
-            <main class="main" id="main-content">
+            <main class="main" id="main-content" tabindex="-1">
                 <div style="text-align: center; margin: 20px">
                     <div class="d-inline-flex align-items-center justify-content-center">
                         <div class="img_wrapper">
@@ -50,12 +50,12 @@ include('../../backend/retrieve_settings.php');
                         </div>
                     </div>
                     <div>
-                        <input id="name_input" class="form-control" style="margin-top: 5px;" maxlength="20" value="<?php echo (htmlspecialchars($user['name'])); ?>" placeholder="username"></input>
-                        <input id="email_input" class="form-control" style="margin-top: 5px;" maxlength="50" value="<?php echo (htmlspecialchars($user['email'])); ?>" placeholder="email adress"></input>
+                        <input id="name_input" class="form-control" style="margin-top: 5px;" maxlength="20" value="<?php echo (htmlspecialchars($user['name'])); ?>" placeholder="username" aria-label="Username"></input>
+                        <input id="email_input" class="form-control" style="margin-top: 5px;" maxlength="50" value="<?php echo (htmlspecialchars($user['email'])); ?>" placeholder="email adress" aria-label="Email address"></input>
                     </div>
                 </div>
                 <div style="text-align: center;">
-                    <button class="btn" onclick="SaveSettings()">Save</button>
+                    <button class="btn" onclick="SaveSettings()">Save settings</button>
                     <p id="settings_error" class="text-danger"></p>
                     <p id="succeded" style="color:green;"></p>
                 </div>

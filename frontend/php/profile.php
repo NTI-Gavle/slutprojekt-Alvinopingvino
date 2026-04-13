@@ -13,7 +13,7 @@ include('../../backend/retrieve_profile.php');
     <!--CSS-->
     <link rel="stylesheet" href="../css/style.css">
 
-    <title>Profile</title>
+    <title><?php echo($user['name']); ?></title>
 </head>
 
 <body>
@@ -31,9 +31,9 @@ include('../../backend/retrieve_profile.php');
                 include('elements/menu.php')
                 ?>
             </div>
-            <main class="main" id="main-content">
+            <main class="main" id="main-content" tabindex="-1">
                 <div class="text-center m-3">
-                    <img class="xlarge_pfp rounded-circle" src="../../backend/uploads/<?php echo (htmlspecialchars($user['profile_pic'])) ?>" alt="pfp">
+                    <img class="xlarge_pfp rounded-circle" src="../../backend/uploads/<?php echo (htmlspecialchars($user['profile_pic'])) ?>" alt="Profile picture of <?php echo(htmlspecialchars($user['name']))?>">
                     <h2>
                         <?php
                         echo (htmlspecialchars($user['name']));

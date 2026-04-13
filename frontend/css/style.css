@@ -26,6 +26,11 @@
     height: 90px;
 }
 
+.post{
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+
 .post:hover {
     background-color: whitesmoke;
 }

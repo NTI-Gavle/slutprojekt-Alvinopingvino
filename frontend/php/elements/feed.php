@@ -12,10 +12,10 @@
         $post['content'] = preg_replace('/\[img.*?\].*?\[\/img\]/is', '', $post['content']);
         echo ('
             <a class="link-dark text-decoration-none" href="' . BASE_URL . 'frontend/php/post.php?post_id=' . $post['id'] . '">
-                <div class="mt-3 post">
+                <div class="mt-3 p-3 post">
                     <div class="d-flex flex-row">
                         <div>
-                            <img class="large_pfp rounded-circle" src="' . BASE_URL . 'backend/uploads/' . htmlspecialchars($user['profile_pic']) . '" alt="pfp"">
+                            <img class="large_pfp rounded-circle" src="' . BASE_URL . 'backend/uploads/' . htmlspecialchars($user['profile_pic']) . '" alt="Profile picture of ' . htmlspecialchars($user['name']) . '">
                         </div>
                         <div class="ms-1">
                             <span class="fw-bold text-decoration-underline">' . htmlspecialchars($user['name']) . '</span>

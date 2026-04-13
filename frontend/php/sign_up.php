@@ -26,20 +26,20 @@
                 include('elements/menu.php')
                 ?>
             </div>
-            <main class="main" style="text-align: center;" id="main-content">
+            <main class="main" style="text-align: center;" id="main-content" tabindex="-1">
                 <div style="text-align: center; margin: 20px">
                     <h2>Sign up</h2>
                 </div>
                 <div style="display: flex; justify-content:center;">
                     <form action="../../backend/create_account.php" method="post" style="width:90%;">
                         <div class="input-group mb-3">
-                            <input style="text-align: center;" type="text" class="form-control" name="username" placeholder="Username">
+                            <input style="text-align: center;" type="text" class="form-control" name="username" placeholder="Username" aria-label="Username">
                         </div>
                         <div class="input-group mb-3">
-                            <input style="text-align: center;" type="email" class="form-control" name="email" placeholder="E-mail address">
+                            <input style="text-align: center;" type="email" class="form-control" name="email" placeholder="Email address" aria-label="Email address">
                         </div>
                         <div class="input-group mb-3">
-                            <input style="text-align: center;" type="password" class="form-control" name="password" placeholder="Password">
+                            <input style="text-align: center;" type="password" class="form-control" name="password" placeholder="Password" aria-label="Password">
                         </div>
                         <div class="input-group mb-3 d-flex justify-content-center">
                             <button type="submit" class="btn">Sign up</button>
