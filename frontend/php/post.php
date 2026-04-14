@@ -13,6 +13,8 @@ include('../../backend/admin_check.php');
 
     <!--CSS-->
     <link rel="stylesheet" href="../css/style.css">
+
+    <!--SCRIPT-->
     <script src="../js/script.js" defer></script>
 
     <title><?php echo (htmlspecialchars($post['title'])); ?></title>
@@ -50,8 +52,8 @@ include('../../backend/admin_check.php');
                         <?php echo ($post['content']) ?>
                     </div>
                     <div class="text-left d-flex">
-                        <button id="like_btn" class="btn d-inline-flex align-items-center justify-content-center" title="Like" onclick="Like(<?php echo ($_GET['post_id']) ?>)" aria-label="Like post"></button>
-                        <p id="like_counter" class="d-inline-flex align-items-center justify-content-center mb-0 ms-1"></p>
+                        <button id="like_btn_<?php echo(htmlspecialchars($post['id'])); ?>" class="btn d-inline-flex align-items-center justify-content-center" title="Like" onclick="Like(<?php echo ($_GET['post_id']) ?>)" aria-label="Like post"></button>
+                        <p id="like_counter_<?php echo(htmlspecialchars($post['id'])); ?>" class="d-inline-flex align-items-center justify-content-center mb-0 ms-1"></p>
                     </div>
                     <?php
                     if ($admin_check['is_admin'] == 1 || $post['author'] == $_SESSION['user_id']) {

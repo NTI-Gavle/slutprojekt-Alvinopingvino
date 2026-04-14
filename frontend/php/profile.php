@@ -13,8 +13,22 @@ include('../../backend/retrieve_profile.php');
     <!--CSS-->
     <link rel="stylesheet" href="../css/style.css">
 
+    <!--SCRIPT-->
+    <script src="../js/script.js"></script>
+
     <title><?php echo($user['name']); ?></title>
 </head>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+        document.querySelectorAll("[id^='like_counter_']").forEach(el => {
+            const postId = el.id.replace("like_counter_", "");
+            RefreshLikes(postId);
+        });
+
+    });
+</script>
 
 <body>
     <a href="#main-content" class="visually-hidden-focusable">
