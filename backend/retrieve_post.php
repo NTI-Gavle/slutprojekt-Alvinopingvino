@@ -24,8 +24,20 @@ $stmt->execute([$post['author']]);
 $author = $stmt->fetch(PDO::FETCH_ASSOC);
 
 $post['content'] = htmlspecialchars($post['content'], ENT_QUOTES, 'UTF-8');
-$post['content'] = preg_replace(
-    '/\[img\](.*?)\[\/img\]/i',
-    '<img src="'. BASE_URL .'backend/uploads/$1" alt="" class="post-img">',
-    $post['content']
+$post['content'] = preg_replace_callback(
+    '/\[img\](.*?)\[\/img\]/i', function($matches){
+        $url = $matches[1];
+
+        $path = parse_url($url, PHP_URL_PATH);
+        $ext = strtolower(pathinfo($path, PATHINFO_EXTENSION));
+        
+        $allowed = ["jpg", "jpeg", "png", "gif"];
+
+        if (in_array($ext, $allowed)){
+            return ('<img src="'. BASE_URL .'backend/uploads/' . $url . '" alt="" class="post-img w-100">');
+        }else{
+            return '';
+        }
+    }
+    ,$post['content']
 );
