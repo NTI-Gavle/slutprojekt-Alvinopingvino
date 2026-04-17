@@ -5,7 +5,7 @@ if (!isset($_FILES['image'])) {
     die('No file uploaded!');
 }
 
-$allowed = ["jpg", "jpeg", "png", "gif"];
+$allowed = ["jpg", "jpeg", "png"];
 $file = $_FILES['image'];
 
 $tmp = $file['tmp_name'];

@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $tmp = $_FILES["image"]["tmp_name"];
         $ext = strtolower(pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION));
 
-        $allowed = ["jpg", "jpeg", "png", "gif"];
+        $allowed = ["jpg", "jpeg", "png"];
 
         if (!in_array($ext, $allowed)) {
             $message = "Only images allowed.";

@@ -110,6 +110,26 @@ function SaveSettings() {
     });
 }
 
+function setupPfpUpload(){
+    const input = document.getElementById("fileInput");
+    input.addEventListener("change", function (e) {
+        this.form.submit();
+    })
+}
+
+function uploadPfp(file){
+    const formData = new FormData()
+    formData.append("image", file)
+
+    fetch(`../../backend/upload_pfp.php`, {
+        method: "POST",
+        body: formData
+    }).then.then(()=>{
+
+    })
+}
+
+
 function setupUpload() {
     const input = document.getElementById("fileInput");
     input.addEventListener("change", function (e) {

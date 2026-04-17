@@ -48,7 +48,7 @@ include('../../backend/loggin_check.php');
                         <div class="d-flex flex-wrap justify-content-center w-100 mb-3" id="previewContainer">
 
                         </div>
-                        <input type="file" id="fileInput" name="image" multiple accept=".jpg, .jpeg, .png, .gif" style="display:none;">
+                        <input type="file" id="fileInput" name="image" multiple accept=".jpg, .jpeg, .png" style="display:none;">
 
                         <div class="input-group mb-3 d-inline-flex align-items-center justify-content-center">
                             <button type="button" title="Upload Image" class="btn d-inline-flex align-items-center justify-content-center" onclick="document.getElementById('fileInput').click();" aria-label="Upload image to post">
