@@ -39,6 +39,11 @@ if ($user_by_email != null) {
     SendBack();
 }
 
+if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+    $_SESSION['sign_up_error'] = "Not a valid email address";
+    SendBack();
+}
+
 $stmt = $dbconn->prepare('INSERT INTO users(name, email, password) VALUES (?, ?, ?)');
 $stmt->execute([$_POST['username'], $_POST['email'], password_hash($_POST['password'], PASSWORD_DEFAULT)]);
 $_SESSION['user_id'] = $dbconn->lastInsertId();

@@ -1,7 +1,7 @@
 <?php
+include('../../backend/retrieve_post.php');
 include('../../backend/admin_check.php');
 include('../../backend/author_check.php');
-include('../../backend/retrieve_post.php');
 ?>
 
 <!DOCTYPE html>

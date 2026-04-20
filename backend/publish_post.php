@@ -9,15 +9,13 @@ if (!(isset($_POST['title']) && isset($_POST['content']))) {
     die();
 }
 
+if (!isset($_SESSION['user_id'])){
+    die();
+}
+
 $stmt = $dbconn->prepare('INSERT INTO posts(author, title, content) values(?, ?, ?)');
 $stmt->execute([$_SESSION['user_id'], $_POST['title'], $_POST['content']]);
 
 $post_id = $dbconn -> lastInsertId();
-
-var_dump($_FILES);
-
-if (!empty($_FILES['image']['name'][0])) {
-    
-}
 
 header('location: ../frontend/php/start.php');
