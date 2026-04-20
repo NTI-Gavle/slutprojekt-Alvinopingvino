@@ -4,6 +4,13 @@
         session_start();
     }
 
-    $stmt = $dbconn -> query('SELECT is_admin FROM users WHERE id =' . $_SESSION['user_id']);
-    $admin_check = $stmt -> fetch(PDO::FETCH_ASSOC);
+    $is_admin = false;
+
+    if (isset($_SESSION['user_id'])){
+        $stmt = $dbconn -> query('SELECT is_admin FROM users WHERE id =' . $_SESSION['user_id']);
+        $admin_check = $stmt -> fetch(PDO::FETCH_ASSOC);
+        if ($admin_check['is_admin'] == true){
+            $is_admin = true;
+        }
+    }
 ?>

@@ -23,8 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (!in_array($ext, $allowed)) {
             $message = "Only images allowed.";
+            die();
         } elseif (!getimagesize($tmp)) {
             $message = "Not a valid image.";
+            die();
         } else {
 
             switch ($ext) {

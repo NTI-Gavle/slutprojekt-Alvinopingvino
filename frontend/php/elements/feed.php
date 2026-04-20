@@ -2,7 +2,7 @@
     include_once(__DIR__ . '/../../../backend/base_url.php');
 
     if (count($posts) == 0){
-        echo ('<p class="text-center">This account has not published any posts yet!</p>');
+        echo ('<p class="text-center mt-5">No posts found!</p>');
     }
 
     foreach ($posts as $post) {
@@ -24,7 +24,9 @@
                     </div>
                     <p class="post_content"> ' . htmlspecialchars($post['content']) .  ' </p>
                     <div class="text-left d-flex">
-                        <button id="like_btn_' . htmlspecialchars($post['id']) . '" class="btn d-inline-flex align-items-center justify-content-center" title="Like" onclick="event.preventDefault(); event.stopPropagation(); Like('. htmlspecialchars($post['id']) .')" aria-label="Like post"></button>
+                        <button id="like_btn_' . htmlspecialchars($post['id']) . '" class="btn d-inline-flex align-items-center justify-content-center" title="Like" onclick="event.preventDefault(); event.stopPropagation(); Like('. htmlspecialchars($post['id']) .')" aria-label="Like post">
+                            
+                        </button>
                         <p id="like_counter_' . htmlspecialchars($post['id']) . '" class="d-inline-flex align-items-center justify-content-center mb-0 ms-1"></p>
                     </div>
                 </div>
