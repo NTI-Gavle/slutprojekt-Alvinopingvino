@@ -1,0 +1,140 @@
+/*Bootstrap css*/
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css');
+
+/*Own css*/
+.main {
+    height: 100%;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.large_pfp {
+    width: 60px;
+    height: 60px;
+}
+
+.small_pfp {
+    width: 30px;
+    height: 30px;
+}
+
+.xlarge_pfp {
+    width: 90px;
+    height: 90px;
+}
+
+.post{
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+
+.post:hover {
+    background-color: whitesmoke;
+}
+
+.post_title {
+    font-size: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    overflow: hidden;
+}
+
+.post_content {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-clamp: 3;
+    overflow: hidden;
+}
+
+input::placeholder {
+    text-align: center;
+}
+
+textarea::placeholder {
+    text-align: center;
+}
+
+.grow_with_text {
+    field-sizing: content;
+    resize: none;
+}
+
+.img_wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.img_wrapper img {
+    display: block;
+}
+
+.edit_btn {
+    position: absolute;
+    top: 64px;
+    left: 64px;
+    padding: 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.btn {
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    background-color: white;
+}
+
+.btn:hover {
+    background-color: whitesmoke !important;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+}
+
+.menu_btn {
+    border: none !important;
+    background-color: rgba(var(--bs-tertiary-bg-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.left {
+    width: 5%;
+    min-width: 57.33px;
+    border-right: 1px solid lightgray;
+}
+
+.right {
+    width: 5%;
+    min-width: 57.33px;
+}
+
+:focus-visible {
+    outline: 2px solid blue !important;
+}
+
+.post_content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+}
+
+/*Media Querries*/
+
+@media (max-width: 600px) {
+    .main {
+        width: 90%;
+        margin: 10px;
+    }
+    .right{
+        min-width: 0px;
+        width: 0px;
+    }
+}
