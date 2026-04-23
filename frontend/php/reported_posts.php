@@ -20,6 +20,17 @@ if ($is_admin == false) {
     <title>Reported posts</title>
 </head>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+        document.querySelectorAll("[id^='like_counter_']").forEach(el => {
+            const postId = el.id.replace("like_counter_", "");
+            RefreshLikes(postId);
+        });
+
+    });
+</script>
+
 <body>
     <a href="#main-content" class="visually-hidden-focusable">
         Skip to main content
